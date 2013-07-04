@@ -110,7 +110,7 @@ def wait_for_command(ldev):
                 sensor = sensor + sensor_variation(toss)
             print ('Sensor: %i' % sensor)
             msg = ('S%0.4i' % sensor)
-            print('>>> ' + msg),
+            print('<<< ' + msg),
             try:
                 ret = ldev.write(0x02, msg, 0, 150)
                 if ret == len(msg):
