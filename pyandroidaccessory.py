@@ -117,6 +117,14 @@ def wait_for_command(ldev):
                     print(' - Write OK')
             except usb.core.USBError as e:
                 print e
+
+            print('>>> '),
+            try:
+                ret = ldev.read(0x81, 5, 0, 150)
+                sret = ''.join([chr(x) for x in ret])
+                print sret
+            except usb.core.USBError as e:
+                print e
             time.sleep(0.2)
         except KeyboardInterrupt:
             print "Bye!"
