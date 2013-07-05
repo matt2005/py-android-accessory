@@ -101,6 +101,15 @@ def sensor_variation(toss):
         10: 1
     }.get(toss, 0)
 
+def sensor_output(lsensor, variation):
+    output = lsensor + variation
+    if output < 0:
+        output = 0
+    else:
+        if output > 100:
+            output = 100
+    return output
+
 def wait_for_command(ldev):
     sensor = 50
     while True:
@@ -123,6 +132,12 @@ def wait_for_command(ldev):
                 ret = ldev.read(0x81, 5, 0, 150)
                 sret = ''.join([chr(x) for x in ret])
                 print sret
+                if sret == "A1111":
+                    variation = -3
+                else:
+                    if sret == "A0000":
+                        variation = 3 
+                sensor = sensor_output(sensor, variation)
             except usb.core.USBError as e:
                 print e
             time.sleep(0.2)
