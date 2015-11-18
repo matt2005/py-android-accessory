@@ -121,7 +121,7 @@ def wait_for_command(ldev):
             msg = ('S%0.4i' % sensor)
             print('<<< ' + msg),
             try:
-                ret = ldev.write(0x02, msg, 0, 150)
+                ret = ldev.write(0x02, msg, 150)
                 if ret == len(msg):
                     print(' - Write OK')
             except usb.core.USBError as e:
@@ -129,7 +129,7 @@ def wait_for_command(ldev):
 
             print('>>> '),
             try:
-                ret = ldev.read(0x81, 5, 0, 150)
+                ret = ldev.read(0x81, 5, 150)
                 sret = ''.join([chr(x) for x in ret])
                 print sret
                 if sret == "A1111":
