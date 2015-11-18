@@ -127,10 +127,10 @@ def wait_for_command(ldev):
             except usb.core.USBError as e:
                 print e
 
-            print('>>> '),
             try:
                 ret = ldev.read(0x81, 5, 150)
                 sret = ''.join([chr(x) for x in ret])
+                print('>>> '),
                 print sret
                 if sret == "A1111":
                     variation = -3
@@ -139,7 +139,11 @@ def wait_for_command(ldev):
                         variation = 3 
                 sensor = sensor_output(sensor, variation)
             except usb.core.USBError as e:
-                print e
+                if e.errno == 110:
+                    pass
+                else:
+                    print
+                    print e
             time.sleep(0.2)
         except KeyboardInterrupt:
             print "Bye!"
