@@ -1,4 +1,4 @@
-py-android-accessory-script
-===========================
+py-android-accessory
+====================
 
-Android Accessory in Python to be used with the Android app (py-android-accessory-app)
+Android Accessory in Python
