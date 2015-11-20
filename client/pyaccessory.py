@@ -63,8 +63,8 @@ def set_strings(ldev):
     send_string(ldev, 2, 'A Python based Android accessory')
     send_string(ldev, 3, '0.1.0-beta')
     send_string(ldev, 4, 
-        'http://zombiebrainzjuice.cc/py-android-accessory/')
-    send_string(ldev, 5, '2254711SerialNo.')    
+            'https://github.com/Arn-O/py-android-accessory/')
+    #send_string(ldev, 5, '2254711SerialNo.')    
     return
 
 def set_accessory_mode(ldev):
