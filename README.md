@@ -43,5 +43,5 @@ Copyright 2016 Arn-O under the [MIT license][license].
 [pysub]: https://walac.github.io/pyusb/
 [screenshot-app]: https://raw.githubusercontent.com/Arn-O/py-android-accessory/master/assets/img/screenshot-app.png
 [screenshot-client]: https://raw.githubusercontent.com/Arn-O/py-android-accessory/master/assets/img/screenshot-client.png
-[ab-android-accessory]: http://arnaudbertrand.com/blog/2013/07/28/python-android-accessory-usb-communication-proof-of-concept/
+[ab-android-accessory]: http://arnaudbertrand.io/blog/2013/07/28/python-android-accessory-usb-communication-proof-of-concept/
 [license]: https://github.com/Arn-O/py-android-accessory/blob/master/LICENSE
